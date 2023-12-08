@@ -12,7 +12,7 @@ public class App {
     System.out.println("Enter number of points");
     int points = sc.nextInt();
     sc.close();
-    
+
     double start = System.currentTimeMillis();
 
     double result = switch (choice) {
@@ -21,7 +21,9 @@ public class App {
       case 2:
         yield new MonteCarlo().calculatePi(points);
       default:
-        yield 0;
+        System.err.println("Invalid choice");
+        System.out.print("Here is Java's Pi");
+        yield Math.PI;
     };
 
     double end = System.currentTimeMillis();
